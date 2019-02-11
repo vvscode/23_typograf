@@ -5,6 +5,7 @@ from server import replace_quotes, replace_hyphen_with_dash_in_text, \
 
 
 class TestTextBeautifier(unittest.TestCase):
+
     def test_replace_quotes1(self):
         self.assertEqual(replace_quotes('"1234"'), '«1234»')
 
@@ -73,6 +74,11 @@ class TestTextBeautifier(unittest.TestCase):
 
     def test_custom_beautify_case1(self):
         self.assertEqual(beautify('<p class="item">Hi</p>'), '<p class="item">Hi</p>')
+
+    def test_custom_beautify_case2(self):
+        self.assertEqual(beautify('<p class="item">Hi there is 2 apples</p>'),
+                         '<p class="item">Hi&nbsp;there is&nbsp;2&nbsp;apples</p>')
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -84,8 +84,7 @@ def beautify(text):
 def form():
     input = request.form['text'] or '' if request.method == 'POST' else ''
     result = beautify(input)
-    print({input, result})
-
+    
     return render_template('form.html', input=input, result=result)
 
 
