@@ -63,7 +63,8 @@ def connect_unions_and_words_helper(match: re.Match):
 
 
 def connect_unions_and_words(text):
-    processed_text = re.sub(r'(\w+)\s+(\w)', connect_unions_and_words_helper, text)
+    processed_text = re.sub(
+        r'(\w+)\s+(\w)', connect_unions_and_words_helper, text)
     return processed_text
 
 
@@ -84,7 +85,7 @@ def beautify(text):
 def form():
     input = request.form['text'] or '' if request.method == 'POST' else ''
     result = beautify(input)
-    
+
     return render_template('form.html', input=input, result=result)
 
 
