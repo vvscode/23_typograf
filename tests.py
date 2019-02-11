@@ -1,11 +1,10 @@
 import unittest
 from server import replace_quotes, replace_hyphen_with_dash_in_text, \
     replace_hyphen_with_short_dash_in_phones, connect_numbers_and_words, clear_whitespaces, \
-    connect_unions_and_words
+    connect_unions_and_words, beautify
 
 
 class TestTextBeautifier(unittest.TestCase):
-
     def test_replace_quotes1(self):
         self.assertEqual(replace_quotes('"1234"'), '«1234»')
 
@@ -71,6 +70,9 @@ class TestTextBeautifier(unittest.TestCase):
 
     def test_connect_unions_and_words4(self):
         self.assertEqual(connect_unions_and_words('it is my dog'), 'it&nbsp;is&nbsp;my&nbsp;dog')
+
+    def test_custom_beautify_case1(self):
+        self.assertEqual(beautify('<p class="item">Hi</p>'), '<p class="item">Hi</p>')
 
 if __name__ == '__main__':
     unittest.main()
