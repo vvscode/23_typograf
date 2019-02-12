@@ -7,9 +7,9 @@ app = Flask(__name__)
 @app.route('/', methods=['POST', 'GET'])
 def form():
     input_text = request.form['text'] or '' if request.method == 'POST' else ''
-    result = beautify(input_text)
+    beautified_text = beautify(input_text)
 
-    return render_template('form.html', input=input_text, result=result)
+    return render_template('form.html', input_text=input_text, beautified_text=beautified_text)
 
 
 if __name__ == '__main__':
