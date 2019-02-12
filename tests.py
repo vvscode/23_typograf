@@ -1,5 +1,5 @@
 import unittest
-from server import replace_quotes, replace_hyphen_with_dash_in_text, \
+from typograph import replace_quotes, replace_hyphen_with_dash_in_text, \
     replace_hyphen_with_short_dash_in_phones, connect_numbers_and_words, clear_whitespaces, \
     connect_unions_and_words, beautify
 
